@@ -11,6 +11,7 @@
 !dist/*.js
 !dist/*.js.map
 !dist/*.exe
+!dist/*.wasm
 
 !resources/*
 
