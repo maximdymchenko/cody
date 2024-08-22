@@ -233,13 +233,12 @@ const TranscriptInteraction: FC<TranscriptInteractionProps> = memo(props => {
 
     const reSubmitWithIntent = useCallback(
         (intent: ChatMessage['intent']) => {
-            onStop()
             const editorState = humanEditorRef.current?.getSerializedValue()
             if (editorState) {
                 onEditSubmit(editorState, intent)
             }
         },
-        [onStop, onEditSubmit]
+        [onEditSubmit]
     )
 
     const reSubmitWithChatIntent = useCallback(() => reSubmitWithIntent('chat'), [reSubmitWithIntent])
