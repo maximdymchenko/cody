@@ -1761,7 +1761,7 @@ export class ChatController implements vscode.Disposable, vscode.WebviewViewProv
                             mergedPromptsAndLegacyCommands(query, signal)
                         ),
                     detectIntent: text =>
-                        promiseFactoryToObservable<ChatMessage['intent']>(signal =>
+                        promiseFactoryToObservable<ChatMessage['intent']>(() =>
                             this.detectChatIntent({ text })
                         ),
                 }
